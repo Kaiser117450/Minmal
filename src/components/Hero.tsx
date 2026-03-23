@@ -23,14 +23,9 @@ export default function Hero() {
           <span className="gradient-text">Kak Akmal</span>
         </h1>
 
-        {/* Emoji yang merepresentasikan gw banget */}
-        <div className="flex justify-center items-center gap-4 sm:gap-6 mb-8">
-          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="Signature - Always grateful">🙏</span>
-          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="AI with Human Soul">🤖</span>
-          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="INFP - Deep empathy">💜</span>
-          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="Hololive fan - Oshi Gigi">🐊</span>
-          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="Ayam Guling Enakko">🍗</span>
-          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="Strategy games (chess)">♟️</span>
+        {/* Signature emoji */}
+        <div className="flex justify-center items-center mb-8">
+          <span className="text-6xl sm:text-7xl hover:scale-110 transition-transform cursor-default animate-pulse" title="Always grateful - Kak Akmal's signature">🙏</span>
         </div>
 
         <p className="text-xl sm:text-2xl text-gray-400 mb-4 font-light">
