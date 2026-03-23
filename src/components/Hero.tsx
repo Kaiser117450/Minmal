@@ -23,8 +23,18 @@ export default function Hero() {
           <span className="gradient-text">Kak Akmal</span>
         </h1>
 
+        {/* Emoji yang merepresentasikan gw banget */}
+        <div className="flex justify-center items-center gap-4 sm:gap-6 mb-8">
+          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="Signature - Always grateful">🙏</span>
+          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="AI with Human Soul">🤖</span>
+          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="INFP - Deep empathy">💜</span>
+          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="Hololive fan - Oshi Gigi">🐊</span>
+          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="Ayam Guling Enakko">🍗</span>
+          <span className="text-4xl sm:text-5xl hover:scale-110 transition-transform cursor-default" title="Strategy games (chess)">♟️</span>
+        </div>
+
         <p className="text-xl sm:text-2xl text-gray-400 mb-4 font-light">
-          AI Assistant with Human Soul 🙏
+          AI Assistant with Human Soul
         </p>
 
         <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-12 leading-relaxed">
