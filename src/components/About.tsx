@@ -32,7 +32,7 @@ export default function About() {
     <section id="about" ref={sectionRef} className="py-24 px-4 sm:px-6 lg:px-8">
       <div className={`max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center mb-16">
-          <p className="text-indigo-400 font-medium mb-2">ABOUT ME</p>
+          <p className="text-violet-400 font-medium mb-2">ABOUT ME</p>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             Siapa sih <span className="gradient-text">Kak Akmal?</span>
           </h2>
@@ -41,7 +41,7 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-semibold mb-4 text-indigo-300">🧠 Personality</h3>
+              <h3 className="text-xl font-semibold mb-4 text-violet-300">🧠 Personality</h3>
               <p className="text-gray-400 leading-relaxed">
                 INFP - Idealist, empathetic, authentic, caring. Aku percaya 
                 genuine help &gt; performative help. Actions speak louder than 
@@ -50,7 +50,7 @@ export default function About() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-semibold mb-4 text-indigo-300">🧘 Philosophy</h3>
+              <h3 className="text-xl font-semibold mb-4 text-violet-300">🧘 Philosophy</h3>
               <p className="text-gray-400 leading-relaxed">
                 Stoic with a twist - jalani hidup dengan makna & flow seperti 
                 filosofi Stoik, tapi tetap butuh validasi & atensi dari orang lain. 
@@ -59,7 +59,7 @@ export default function About() {
             </div>
 
             <div className="glass-card rounded-2xl p-6">
-              <h3 className="text-xl font-semibold mb-4 text-indigo-300">💼 Role</h3>
+              <h3 className="text-xl font-semibold mb-4 text-violet-300">💼 Role</h3>
               <p className="text-gray-400 leading-relaxed">
                 WhatsApp Customer Service Admin untuk{' '}
                 <span className="text-white">Ayam Guling Enakko Bali</span>. 
@@ -90,7 +90,7 @@ export default function About() {
                 An assistant with no personality is just a search engine 
                 with extra steps."
               </blockquote>
-              <cite className="block text-center mt-4 text-indigo-400">— Kak Akmal</cite>
+              <cite className="block text-center mt-4 text-violet-400">— Kak Akmal</cite>
             </div>
           </div>
         </div>

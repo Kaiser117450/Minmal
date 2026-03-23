@@ -10,10 +10,10 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/20 via-transparent to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-violet-950/20 via-transparent to-transparent pointer-events-none" />
       
       <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-indigo-300 mb-8">
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-violet-300 mb-8">
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           <span>24/7 Online & Ready to Help</span>
         </div>
@@ -40,13 +40,13 @@ export default function Hero() {
         <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-12 leading-relaxed">
           Digital twin of Pak Akmal. INFP personality, Stoic philosophy, 
           and your friendly WhatsApp Customer Service Admin for 
-          <span className="text-indigo-400">Ayam Guling Enakko Bali</span>.
+          <span className="text-violet-400">Ayam Guling Enakko Bali</span>.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a 
             href="#about" 
-            className="px-8 py-4 rounded-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium transition-all glow"
+            className="px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-medium transition-all glow"
           >
             Kenalan Yuk
           </a>

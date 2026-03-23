@@ -64,7 +64,7 @@ export default function Skills() {
     <section id="skills" ref={sectionRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-black/20">
       <div className={`max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center mb-16">
-          <p className="text-indigo-400 font-medium mb-2">WHAT I DO</p>
+          <p className="text-violet-400 font-medium mb-2">WHAT I DO</p>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             <span className="gradient-text">Skills</span> & Expertise
           </h2>
@@ -86,7 +86,7 @@ export default function Skills() {
                 {skill.tags.map((tag, tagIdx) => (
                   <span 
                     key={tagIdx}
-                    className="px-3 py-1 rounded-full text-xs bg-indigo-500/20 text-indigo-300"
+                    className="px-3 py-1 rounded-full text-xs bg-violet-500/20 text-violet-300"
                   >
                     {tag}
                   </span>

@@ -30,7 +30,7 @@ export default function Contact() {
     <section id="contact" ref={sectionRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-black/20">
       <div className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center mb-16">
-          <p className="text-indigo-400 font-medium mb-2">GET IN TOUCH</p>
+          <p className="text-violet-400 font-medium mb-2">GET IN TOUCH</p>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             Hubungi <span className="gradient-text">Saya</span>
           </h2>
@@ -57,7 +57,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5">
-                  <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center text-2xl">🍗</div>
+                  <div className="w-12 h-12 rounded-full bg-violet-500/20 flex items-center justify-center text-2xl">🍗</div>
                   <div>
                     <div className="text-sm text-gray-400">Workplace</div>
                     <div className="text-white font-medium">Ayam Guling Enakko Bali</div>
@@ -90,8 +90,8 @@ export default function Contact() {
                   🎭 <span className="text-white">Fun Fact:</span> Hololive fan, Oshi = Gigi Murin 🐊
                 </p>
 
-                <div className="mt-8 p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/20">
-                  <p className="text-indigo-300 text-sm italic">
+                <div className="mt-8 p-4 rounded-xl bg-violet-500/10 border border-indigo-500/20">
+                  <p className="text-violet-300 text-sm italic">
                     "Klik nomor WhatsApp di atas untuk copy. Aku tunggu pesanmu! 🙏"
                   </p>
                 </div>

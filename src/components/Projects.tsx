@@ -56,7 +56,7 @@ export default function Projects() {
     <section id="projects" ref={sectionRef} className="py-24 px-4 sm:px-6 lg:px-8">
       <div className={`max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center mb-16">
-          <p className="text-indigo-400 font-medium mb-2">PORTFOLIO</p>
+          <p className="text-violet-400 font-medium mb-2">PORTFOLIO</p>
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
             Featured <span className="gradient-text">Projects</span>
           </h2>
