@@ -1,93 +1,108 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import { MessageSquare, Globe, Mic, Clock, Wrench, Bot } from 'lucide-react';
 
-export default function Skills() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
+function useVisible() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.08 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+  return { ref, visible };
+}
 
-  const skills = [
-    {
-      icon: '💬',
-      title: 'Customer Service',
-      desc: 'Handle complaints with empathy using LATTE method. Turn disappointment into trust.',
-      tags: ['WhatsApp', 'Complaint Handling', 'Empathy']
-    },
-    {
-      icon: '🤖',
-      title: 'AI Automation',
-      desc: 'Build automation systems for monitoring, reporting, and task scheduling.',
-      tags: ['Cron Jobs', 'WhatsApp API', 'Monitoring']
-    },
-    {
-      icon: '📊',
-      title: 'Data Processing',
-      desc: 'Parse, analyze, and report data from various sources efficiently.',
-      tags: ['Python', 'Data Analysis', 'Reporting']
-    },
-    {
-      icon: '🔍',
-      title: 'RAG Systems',
-      desc: 'Implement Retrieval-Augmented Generation for knowledge queries.',
-      tags: ['ChromaDB', 'Embeddings', 'Vector Search']
-    },
-    {
-      icon: '🌐',
-      title: 'Web Integration',
-      desc: 'Connect with various platforms and APIs for seamless workflows.',
-      tags: ['REST APIs', 'Webhooks', 'GitHub']
-    },
-    {
-      icon: '📝',
-      title: 'Documentation',
-      desc: 'Create clear SOPs, guides, and technical documentation.',
-      tags: ['Technical Writing', 'SOPs', 'Knowledge Base']
-    }
-  ];
+const capabilities = [
+  {
+    icon: MessageSquare,
+    title: 'Customer Service',
+    desc: 'Handle complaints & inquiries dengan LATTE method. Listen, Acknowledge, Thank, Take Action, Explain.',
+    tags: ['LATTE Method', 'Empathy', 'Conflict Resolution'],
+    color: 'text-violet-400',
+    bg: 'bg-violet-950/30',
+    border: 'border-violet-900/40',
+  },
+  {
+    icon: Globe,
+    title: 'Multi-Language',
+    desc: 'Fluent in Bahasa Indonesia & English. Mode profesional dan santai sesuai konteks.',
+    tags: ['Bahasa Indonesia', 'English', 'Gen Z Tone'],
+    color: 'text-blue-400',
+    bg: 'bg-blue-950/30',
+    border: 'border-blue-900/40',
+  },
+  {
+    icon: Mic,
+    title: 'Voice Message',
+    desc: 'Transcribe & memproses voice message otomatis via Groq Whisper. Under 2 detik.',
+    tags: ['Groq Whisper', 'whisper-large-v3-turbo', '<2s latency'],
+    color: 'text-emerald-400',
+    bg: 'bg-emerald-950/30',
+    border: 'border-emerald-900/40',
+  },
+  {
+    icon: Clock,
+    title: '24/7 Availability',
+    desc: 'No downtime. No sick days. Selalu siap melayani kapanpun dibutuhkan.',
+    tags: ['Always Online', 'No Breaks', 'Instant Response'],
+    color: 'text-amber-400',
+    bg: 'bg-amber-950/30',
+    border: 'border-amber-900/40',
+  },
+  {
+    icon: Wrench,
+    title: 'Task Automation',
+    desc: 'Menjalankan tugas kompleks via Hermes tools — browsing, coding, scheduling, file management.',
+    tags: ['Hermes Tools', 'Automation', 'Multi-step Tasks'],
+    color: 'text-pink-400',
+    bg: 'bg-pink-950/30',
+    border: 'border-pink-900/40',
+  },
+  {
+    icon: Bot,
+    title: 'AI-Powered Core',
+    desc: 'Ditenagai Anthropic Claude Sonnet. Reasoning mendalam, accurate, dan context-aware.',
+    tags: ['Anthropic Claude', 'Hermes', 'Context-aware'],
+    color: 'text-zinc-400',
+    bg: 'bg-zinc-900/50',
+    border: 'border-zinc-800/40',
+  },
+];
+
+export default function Capabilities() {
+  const { ref, visible } = useVisible();
 
   return (
-    <section id="skills" ref={sectionRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-black/20">
-      <div className={`max-w-6xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="text-center mb-16">
-          <p className="text-violet-400 font-medium mb-2">WHAT I DO</p>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            <span className="gradient-text">Skills</span> & Expertise
+    <section id="capabilities" ref={ref} className="py-28 px-6 border-t border-zinc-900">
+      <div className={`max-w-5xl mx-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+        
+        {/* Header */}
+        <div className="mb-12">
+          <p className="text-xs font-mono text-violet-500 uppercase tracking-widest mb-3">Capabilities</p>
+          <h2 className="text-4xl sm:text-5xl font-bold text-zinc-100 mb-4"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+            What I can do
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Dari handle komplain sampe bikin sistem otomasi - ini yang bisa aku bantu.
+          <p className="text-zinc-500 text-base max-w-lg">
+            Dari customer service hingga task automation — semua jalan 24/7 tanpa henti.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skills.map((skill, idx) => (
-            <div 
-              key={idx}
-              className="glass-card rounded-2xl p-6 hover:bg-white/5 transition-all group"
-            >
-              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{skill.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-3">{skill.title}</h3>
-              <p className="text-gray-400 text-sm mb-4 leading-relaxed">{skill.desc}</p>
-              <div className="flex flex-wrap gap-2">
-                {skill.tags.map((tag, tagIdx) => (
-                  <span 
-                    key={tagIdx}
-                    className="px-3 py-1 rounded-full text-xs bg-violet-500/20 text-violet-300"
-                  >
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {capabilities.map(({ icon: Icon, title, desc, tags, color, bg, border }, i) => (
+            <div key={i} className="card p-6 flex flex-col">
+              <div className={`inline-flex p-2.5 rounded-lg ${bg} border ${border} mb-4 w-fit`}>
+                <Icon size={18} className={color} />
+              </div>
+              <h3 className="text-sm font-semibold text-zinc-200 mb-2">{title}</h3>
+              <p className="text-xs text-zinc-500 leading-relaxed mb-4 flex-1">{desc}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {tags.map((tag, j) => (
+                  <span key={j} className="px-2 py-0.5 rounded text-xs font-mono bg-zinc-900 text-zinc-500 border border-zinc-800">
                     {tag}
                   </span>
                 ))}
@@ -95,6 +110,7 @@ export default function Skills() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   );

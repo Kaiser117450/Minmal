@@ -1,74 +1,83 @@
 import { useState, useEffect } from 'react';
+import { ArrowRight, MessageSquare, Zap, Bot } from 'lucide-react';
 
 export default function Hero() {
-  const [isVisible, setIsVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setIsVisible(true);
+    setMounted(true);
   }, []);
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-violet-950/20 via-transparent to-transparent pointer-events-none" />
-      
-      <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card text-sm text-violet-300 mb-8">
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-          <span>24/7 Online & Ready to Help</span>
+    <section className="relative min-h-screen flex items-center justify-center px-6 pt-20 dot-grid overflow-hidden">
+      {/* Glow orb */}
+      <div className="hero-glow" />
+
+      <div className={`relative max-w-3xl mx-auto text-center transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+        
+        {/* Status badge */}
+        <div className="inline-flex items-center gap-2 badge mb-8">
+          <span className="status-dot" />
+          <span>Powered by Hermes</span>
+          <span className="text-zinc-600">/</span>
+          <Zap size={11} className="text-violet-400" />
+          <span className="text-violet-400">Anthropic Claude</span>
         </div>
 
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-          Hi, I'm{' '}
-          <span className="gradient-text">Kak Akmal</span>
+        {/* Heading */}
+        <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold tracking-tight mb-5 text-zinc-50"
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+          Kak <span className="gradient-text">Akmal</span>
         </h1>
 
-        {/* Signature emoji */}
-        <div className="flex justify-center items-center mb-8">
-          <span className="text-6xl sm:text-7xl hover:scale-110 transition-transform cursor-default animate-pulse" title="Always grateful - Kak Akmal's signature">🙏</span>
-        </div>
-
-        <p className="text-xl sm:text-2xl text-gray-400 mb-4 font-light">
+        {/* Role */}
+        <p className="text-lg sm:text-xl text-zinc-400 font-light mb-4 tracking-wide">
           AI Assistant with Human Soul
         </p>
 
-        <p className="text-lg text-gray-500 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Digital twin of Pak Akmal. INFP personality, Stoic philosophy, 
-          and your friendly WhatsApp Customer Service Admin for 
-          <span className="text-violet-400">Ayam Guling Enakko Bali</span>.
+        {/* Description */}
+        <p className="text-base text-zinc-500 max-w-xl mx-auto mb-10 leading-relaxed">
+          Digital twin of Pak Akmal. INFP personality, Stoic philosophy.
+          Customer Service Admin for{' '}
+          <span className="text-zinc-300">Ayam Guling Enakko Bali</span>{' '}
+          — running 24/7 on Hermes.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a 
-            href="#about" 
-            className="px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-medium transition-all glow"
-          >
-            Kenalan Yuk
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
+          <a href="#about" className="btn-primary">
+            Learn More
+            <ArrowRight size={15} />
           </a>
-          <a 
-            href="#contact" 
-            className="px-8 py-4 rounded-full glass-card hover:bg-white/5 text-white font-medium transition-all border border-white/10"
-          >
-            Hubungi Saya
+          <a href="#contact" className="btn-secondary">
+            <MessageSquare size={15} />
+            Get in Touch
           </a>
         </div>
 
-        <div className="mt-16 flex justify-center gap-8 text-gray-500">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">24/7</div>
-            <div className="text-sm">Standby</div>
-          </div>
-          <div className="w-px bg-gray-800" />
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">INFP</div>
-            <div className="text-sm">Personality</div>
-          </div>
-          <div className="w-px bg-gray-800" />
-          <div className="text-center">
-            <div className="text-3xl font-bold text-white mb-1">Gen Z</div>
-            <div className="text-sm">Age 20</div>
-          </div>
+        {/* Stats */}
+        <div className="inline-grid grid-cols-3 gap-px rounded-xl overflow-hidden border border-zinc-800/60">
+          {[
+            { value: '24/7', label: 'Standby' },
+            { value: 'INFP', label: 'Personality' },
+            { value: 'Gen Z', label: 'Age 20' },
+          ].map((stat, i) => (
+            <div key={i} className="bg-zinc-900/40 px-8 py-4 text-center">
+              <div className="text-xl font-semibold text-zinc-100 mb-0.5"
+                   style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+                {stat.value}
+              </div>
+              <div className="text-xs text-zinc-600">{stat.label}</div>
+            </div>
+          ))}
         </div>
+
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-zinc-700">
+        <span className="text-xs">scroll</span>
+        <div className="w-px h-8 bg-gradient-to-b from-zinc-700 to-transparent" />
       </div>
     </section>
   );

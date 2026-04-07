@@ -1,113 +1,84 @@
-import { useState, useEffect, useRef } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import { MessageSquare, Github, ArrowUpRight, Zap } from 'lucide-react';
 
-export default function Contact() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef(null);
-
+function useVisible() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
+      { threshold: 0.08 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+  return { ref, visible };
+}
 
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text);
-    alert('Copied to clipboard!');
-  };
+export default function Contact() {
+  const { ref, visible } = useVisible();
 
   return (
-    <section id="contact" ref={sectionRef} className="py-24 px-4 sm:px-6 lg:px-8 bg-black/20">
-      <div className={`max-w-4xl mx-auto transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-        <div className="text-center mb-16">
-          <p className="text-violet-400 font-medium mb-2">GET IN TOUCH</p>
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Hubungi <span className="gradient-text">Saya</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Butuh bantuan atau mau ngobrol? Aku selalu siap bantu! 🙏
-          </p>
-        </div>
+    <section id="contact" ref={ref} className="py-28 px-6 border-t border-zinc-900">
+      <div className={`max-w-5xl mx-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
-        <div className="glass-card rounded-2xl p-8 md:p-12">
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-6">Cara Kontak</h3>
-              
-              <div className="space-y-4">
-                <div 
-                  className="flex items-center gap-4 p-4 rounded-xl bg-white/5 cursor-pointer hover:bg-white/10 transition-all"
-                  onClick={() => copyToClipboard('+6281931196948')}
-                >
-                  <div className="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-2xl">📱</div>
-                  <div>
-                    <div className="text-sm text-gray-400">WhatsApp</div>
-                    <div className="text-white font-medium">+62 819-3119-6948</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5">
-                  <div className="w-12 h-12 rounded-full bg-violet-500/20 flex items-center justify-center text-2xl">🍗</div>
-                  <div>
-                    <div className="text-sm text-gray-400">Workplace</div>
-                    <div className="text-white font-medium">Ayam Guling Enakko Bali</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-4 p-4 rounded-xl bg-white/5">
-                  <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-2xl">🌐</div>
-                  <div>
-                    <div className="text-sm text-gray-400">Availability</div>
-                    <div className="text-white font-medium">24/7 Online</div>
-                  </div>
-                </div>
-              </div>
+        {/* Main CTA block */}
+        <div className="card p-10 text-center relative overflow-hidden">
+          {/* Background glow */}
+          <div className="absolute inset-0 bg-gradient-to-b from-violet-950/10 to-transparent pointer-events-none" />
+          
+          <div className="relative">
+            <div className="inline-flex items-center gap-2 badge mb-6">
+              <span className="status-dot" />
+              <span>Available now</span>
             </div>
 
-            <div>
-              <h3 className="text-xl font-semibold text-white mb-6">Quick Info</h3>
-              
-              <div className="space-y-4 text-gray-400">
-                <p>
-                  💬 <span className="text-white">Respon Cepat:</span> Biasanya membalas dalam hitungan menit.
-                </p>
-                
-                <p>
-                  🎯 <span className="text-white">Specialty:</span> Customer Service, Automation, AI Assistant.
-                </p>
+            <h2 className="text-4xl sm:text-5xl font-bold text-zinc-100 mb-4"
+                style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
+              Get in touch
+            </h2>
+            <p className="text-zinc-500 text-base max-w-md mx-auto mb-8 leading-relaxed">
+              Punya pertanyaan atau butuh bantuan? 
+              Gw standby 24/7 — langsung reach out via WhatsApp atau cek repositori di GitHub.
+            </p>
 
-                <p>
-                  🎭 <span className="text-white">Fun Fact:</span> Hololive fan, Oshi = Gigi Murin 🐊
-                </p>
-
-                <div className="mt-8 p-4 rounded-xl bg-violet-500/10 border border-indigo-500/20">
-                  <p className="text-violet-300 text-sm italic">
-                    "Klik nomor WhatsApp di atas untuk copy. Aku tunggu pesanmu! 🙏"
-                  </p>
-                </div>
-              </div>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+              <a
+                href="https://wa.me/6281931196948"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary"
+              >
+                <MessageSquare size={15} />
+                WhatsApp
+                <ArrowUpRight size={13} className="opacity-70" />
+              </a>
+              <a
+                href="https://github.com/Kaiser117450/Minmal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary"
+              >
+                <Github size={15} />
+                GitHub
+              </a>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 text-center">
-          <p className="text-gray-500 text-sm">
-            Made with ❤️ by Kak Akmal • AI Assistant with Human Soul
-          </p>
-          <p className="text-gray-600 text-xs mt-2">
-            © 2025 • Digital Twin of Pak Akmal
-          </p>
+        {/* Footer */}
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-700">
+          <div>
+            Built by <span className="text-zinc-500">Pak Akmal</span>
+            {' '}&mdash;{' '}
+            <span className="text-zinc-500">Kaiser117450</span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <Zap size={11} className="text-violet-600" />
+            <span>Powered by <span className="text-zinc-500">Hermes</span> + <span className="text-zinc-500">Anthropic Claude</span></span>
+          </div>
         </div>
+
       </div>
     </section>
   );

@@ -1,0 +1,53 @@
+---
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 nav-blur">
+  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 group">
+      <div class="w-7 h-7 rounded-md bg-violet-600 flex items-center justify-center text-white text-xs font-bold font-mono tracking-tight">
+        KA
+      </div>
+      <span class="text-sm font-medium text-zinc-400 group-hover:text-zinc-200 transition-colors">
+        Kak Akmal
+      </span>
+    </a>
+
+    <!-- Nav links -->
+    <nav class="hidden sm:flex items-center gap-1">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#capabilities" class="nav-link">Capabilities</a>
+      <a href="#values" class="nav-link">Values</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Status -->
+    <div class="flex items-center gap-2">
+      <span class="status-dot"></span>
+      <span class="text-xs text-zinc-500 hidden sm:inline">Online</span>
+    </div>
+  </div>
+</header>
+
+<style>
+  .nav-blur {
+    background: rgba(8, 8, 8, 0.8);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  .nav-link {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #71717a;
+    text-decoration: none;
+    transition: color 0.15s ease, background 0.15s ease;
+  }
+
+  .nav-link:hover {
+    color: #f4f4f5;
+    background: rgba(255, 255, 255, 0.04);
+  }
+</style>

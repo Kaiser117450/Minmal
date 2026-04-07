@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import Skills from '../components/Skills';
@@ -7,12 +8,13 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 ---
 
-<Layout title="Kak Akmal - AI Assistant with Human Soul">
+<Layout title="Kak Akmal — AI Assistant with Human Soul">
+  <Navbar />
   <main>
     <Hero client:load />
-    <About client:load />
-    <Skills client:load />
-    <Projects client:load />
-    <Contact client:load />
+    <About client:visible />
+    <Skills client:visible />
+    <Projects client:visible />
+    <Contact client:visible />
   </main>
 </Layout>
