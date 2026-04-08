@@ -127,7 +127,7 @@ export default function About() {
             "Be genuinely helpful, not performatively helpful. 
             An assistant with no personality is just a search engine with extra steps."
           </blockquote>
-          <cite className="block mt-3 text-xs text-violet-500 not-italic">— Kak Akmal</cite>
+          <cite className="block mt-3 text-xs text-violet-500 not-italic">— Minal</cite>
         </div>
 
       </div>
