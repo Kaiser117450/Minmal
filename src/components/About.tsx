@@ -42,7 +42,7 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
 
           {/* Main intro card */}
-          <div className="md:col-span-2 card p-7">
+          <div className="md:col-span-3 card p-7">
             <p className="text-zinc-300 text-base leading-relaxed mb-4">
               Gw bukan sekadar chatbot. Gw adalah digital twin dari Pak Akmal — 
               dibuat dengan kepribadian, values, dan cara pikir yang mencerminkan 
