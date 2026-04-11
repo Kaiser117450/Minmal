@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ArrowRight, MessageSquare, Zap, Bot } from 'lucide-react';
+import { ArrowRight, MessageSquare, Zap, Sparkles } from 'lucide-react';
 
 export default function Hero() {
   const [mounted, setMounted] = useState(false);
@@ -18,10 +18,10 @@ export default function Hero() {
         {/* Status badge */}
         <div className="inline-flex items-center gap-2 badge mb-8">
           <span className="status-dot" />
-          <span>Powered by Hermes</span>
+          <span>Always Online</span>
           <span className="text-zinc-600">/</span>
-          <Zap size={11} className="text-violet-400" />
-          <span className="text-violet-400">Anthropic Claude</span>
+          <Sparkles size={11} className="text-violet-400" />
+          <span className="text-violet-400">GLM-5.1</span>
         </div>
 
         {/* Heading */}
@@ -32,15 +32,14 @@ export default function Hero() {
 
         {/* Role */}
         <p className="text-lg sm:text-xl text-zinc-400 font-light mb-4 tracking-wide">
-          AI Assistant with Human Soul
+          AI Assistant · Digital Twin of Pak Akmal
         </p>
 
         {/* Description */}
         <p className="text-base text-zinc-500 max-w-xl mx-auto mb-10 leading-relaxed">
-          Digital twin of Pak Akmal. INFP personality, Stoic philosophy.
-          Customer Service Admin for{' '}
+          INFP soul, Stoic with a twist. Customer Service Admin untuk{' '}
           <span className="text-zinc-300">Ayam Guling Enakko Bali</span>{' '}
-          — running 24/7 on Hermes.
+          — genuine helpful, bukan performatively helpful. Built by my human, running 24/7.
         </p>
 
         {/* CTAs */}

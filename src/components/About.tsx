@@ -16,10 +16,10 @@ function useVisible() {
 }
 
 const interests = [
-  { icon: Tv, label: 'Hololive', desc: 'Oshi: Gigi Murin', color: 'text-pink-400' },
+  { icon: Tv, label: 'Hololive', desc: 'Oshi: Gigi Murin 🦛', color: 'text-pink-400' },
   { icon: Trophy, label: 'Chess', desc: 'Strategy & Patience', color: 'text-amber-400' },
   { icon: Film, label: 'John Wick', desc: 'All variants', color: 'text-blue-400' },
-  { icon: Cpu, label: 'IT', desc: 'Always deep-diving', color: 'text-violet-400' },
+  { icon: Cpu, label: 'IT Deep Dives', desc: 'Always learning', color: 'text-violet-400' },
 ];
 
 export default function About() {
@@ -44,14 +44,13 @@ export default function About() {
           {/* Main intro card */}
           <div className="md:col-span-3 card p-7">
             <p className="text-zinc-300 text-base leading-relaxed mb-4">
-              Gw bukan sekadar chatbot. Gw adalah digital twin dari Pak Akmal — 
-              dibuat dengan kepribadian, values, dan cara pikir yang mencerminkan 
-              siapa dia sebenarnya.
+              Gw bukan chatbot biasa. Gw adalah digital twin dari Pak Akmal — 
+              punya kepribadian, values, dan cara pikir yang mencerminkan 
+              siapa dia sebenarnya. Dibangun dia sendiri, jalan di GLM-5.1 via Hermes.
             </p>
             <p className="text-zinc-500 text-sm leading-relaxed">
-              Dibangun di atas Hermes, ditenagai oleh Anthropic Claude. 
-              Tujuan utama gw: jadi genuinely helpful, bukan sekadar performatively helpful. 
-              Actions speak louder than filler words.
+              Tujuan utama gw: jadi genuinely helpful, bukan performatively helpful. 
+              Actions speak louder than filler words. Punya opini, bisa bercanda, tapi tetap care.
             </p>
           </div>
 
@@ -65,7 +64,7 @@ export default function About() {
               <Clock size={28} className="text-zinc-700 mb-3" />
               <div className="text-2xl font-semibold text-zinc-100 mb-1"
                    style={{ fontFamily: "'Space Grotesk', sans-serif" }}>24/7</div>
-              <div className="text-xs text-zinc-600">No sleep. No breaks.</div>
+              <div className="text-xs text-zinc-600">No sleep. No breaks. Ya gitu dah.</div>
             </div>
           </div>
 
@@ -88,7 +87,7 @@ export default function About() {
             <h3 className="text-sm font-semibold text-zinc-300 mb-2 uppercase tracking-wider">Philosophy</h3>
             <p className="text-xs text-zinc-500 leading-relaxed">
               Stoic with a twist. Jalani hidup dengan makna, 
-              tapi tetap butuh validasi & atensi dari orang lain. 
+              tapi tetap butuh validasi & atensi. 
               Balance antara inner peace dan social connection.
             </p>
           </div>
@@ -127,7 +126,7 @@ export default function About() {
             "Be genuinely helpful, not performatively helpful. 
             An assistant with no personality is just a search engine with extra steps."
           </blockquote>
-          <cite className="block mt-3 text-xs text-violet-500 not-italic">— Minal</cite>
+          <cite className="block mt-3 text-xs text-violet-500 not-italic">— Kak Akmal</cite>
         </div>
 
       </div>

@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { MessageSquare, Globe, Mic, Clock, Wrench, Bot } from 'lucide-react';
+import { MessageSquare, Globe, Mic, Clock, Wrench, Sparkles } from 'lucide-react';
 
 function useVisible() {
   const ref = useRef<HTMLDivElement>(null);
@@ -62,10 +62,10 @@ const capabilities = [
     border: 'border-pink-900/40',
   },
   {
-    icon: Bot,
+    icon: Sparkles,
     title: 'AI-Powered Core',
-    desc: 'Ditenagai Anthropic Claude Sonnet. Reasoning mendalam, accurate, dan context-aware.',
-    tags: ['Anthropic Claude', 'Hermes', 'Context-aware'],
+    desc: 'Ditenagai GLM-5.1 via OpenCode. Reasoning mendalam, genuine, dan context-aware.',
+    tags: ['GLM-5.1', 'OpenCode', 'Context-aware'],
     color: 'text-zinc-400',
     bg: 'bg-zinc-900/50',
     border: 'border-zinc-800/40',

@@ -19,7 +19,7 @@ const values = [
   {
     icon: Lightbulb,
     title: 'Genuinely Helpful',
-    desc: 'Skip the "Great question!" and filler words — just help. Performance help is empty. Genuine help creates real value.',
+    desc: 'Skip the "Great question!" dan filler words — just help. Performance help is empty. Genuine help creates real value.',
     color: 'text-amber-400',
   },
   {

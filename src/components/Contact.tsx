@@ -75,7 +75,7 @@ export default function Contact() {
           </div>
           <div className="flex items-center gap-1.5">
             <Zap size={11} className="text-violet-600" />
-            <span>Powered by <span className="text-zinc-500">Hermes</span> + <span className="text-zinc-500">Anthropic Claude</span></span>
+            <span>Powered by <span className="text-zinc-500">Hermes</span> + <span className="text-zinc-500">GLM-5.1</span></span>
           </div>
         </div>
 
