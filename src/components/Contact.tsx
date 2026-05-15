@@ -19,25 +19,29 @@ export default function Contact() {
   const { ref, visible } = useVisible();
 
   return (
-    <section id="contact" ref={ref} className="pt-24" style={{ borderTop: '1px solid var(--border)' }}>
-      {/* CTA + Divider inside constrained container */}
+    <section id="contact" ref={ref} className="pt-12 md:pt-24" style={{ borderTop: '1px solid var(--border)' }}>
+      {/* CTA inside constrained container */}
       <div className={`max-w-5xl mx-auto px-6 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
-        {/* Main CTA block — dark bg */}
+        {/* Main CTA block — card-feature-dark: 18px radius, 32px padding */}
         <div className="relative overflow-hidden starfield"
-             style={{ background: '#150f23', borderRadius: '12px', padding: 'clamp(40px, 8vw, 64px) clamp(24px, 5vw, 40px)' }}>
+             style={{ background: '#150f23', borderRadius: '18px', padding: 'clamp(32px, 6vw, 64px) clamp(24px, 4vw, 40px)' }}>
 
           <div className="relative" style={{ zIndex: 1 }}>
-            <div className="inline-flex items-center gap-2 badge mb-6">
+            {/* badge — pill-neutral-dark */}
+            <div className="inline-flex items-center gap-2 mb-6"
+                 style={{ background: '#150f23', borderRadius: '4px', padding: '4px 10px' }}>
               <span className="status-dot" />
-              <span className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>AVAILABLE NOW</span>
+              <span style={{ fontSize: '12px', fontWeight: 400, lineHeight: 1.43, color: 'var(--text-secondary)' }}>Available Now</span>
             </div>
 
-            <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4"
-                style={{ letterSpacing: '-0.02em' }}>
+            {/* display-large: 60px/500/1.1/0 */}
+            <h2 className="text-white mb-4"
+                style={{ fontFamily: "'Space Grotesk', 'Rubik', sans-serif", fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 500, lineHeight: 1.1, letterSpacing: 0 }}>
               Get in touch
             </h2>
-            <p className="text-base max-w-md mx-auto mb-8 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+            {/* body-lg: 16px/400/2.0 */}
+            <p className="max-w-md mx-auto mb-8" style={{ fontSize: '16px', fontWeight: 400, lineHeight: 2.0, letterSpacing: 0, color: 'var(--text-secondary)' }}>
               Punya pertanyaan atau butuh bantuan?
               Gw standby 24/7 — langsung reach out via WhatsApp atau cek repositori di GitHub.
             </p>
@@ -48,6 +52,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-inverted"
+                style={{ boxShadow: 'rgba(0,0,0,0.08) 0 2px 8px 0' }}
               >
                 <MessageSquare size={15} />
                 WHATSAPP
@@ -70,17 +75,17 @@ export default function Contact() {
         <div className="squiggly-divider mt-12" />
       </div>
 
-      {/* Footer — full width light bg, NO negative margins */}
-      <div className="mt-0 pt-8 pb-6 px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs"
-           style={{ background: 'var(--surface-light)', color: 'var(--ink-light)', borderTop: '1px solid var(--border-light)' }}>
-        <div>
-          Built by <span className="font-medium" style={{ color: 'var(--ink-light)' }}>Pak Akmal</span>
+      {/* Footer — footer-light: bg #ffffff, text #1f1633, caption 14px/400, padding 32px 24px */}
+      <div className="mt-0 pt-8 pb-8 px-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+           style={{ background: '#ffffff', color: '#1f1633', borderTop: '1px solid #e5e7eb' }}>
+        <div style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.43, color: '#1f1633' }}>
+          Built by <span style={{ fontWeight: 500, color: '#1f1633' }}>Pak Akmal</span>
           {' '}&mdash;{' '}
-          <span className="font-medium" style={{ color: 'var(--ink-light)' }}>Kaiser117450</span>
+          <span style={{ fontWeight: 500, color: '#1f1633' }}>Kaiser117450</span>
         </div>
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5" style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.43, color: '#1f1633' }}>
           <Zap size={11} style={{ color: '#c2ef4e' }} />
-          <span>Powered by <span className="font-medium" style={{ color: 'var(--ink-light)' }}>Hermes</span> + <span className="font-medium" style={{ color: 'var(--ink-light)' }}>GLM-5.1</span></span>
+          <span>Powered by <span style={{ fontWeight: 500, color: '#1f1633' }}>Hermes</span> + <span style={{ fontWeight: 500, color: '#1f1633' }}>GLM-5.1</span></span>
         </div>
       </div>
     </section>

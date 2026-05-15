@@ -26,13 +26,15 @@ export default function About() {
   const { ref, visible } = useVisible();
 
   return (
-    <section id="about" ref={ref} className="py-24 px-6" style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}>
+    <section id="about" ref={ref} className="py-12 md:py-24 px-6" style={{ background: 'var(--bg)', borderTop: '1px solid var(--border)' }}>
       <div className={`max-w-5xl mx-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         
         {/* Section header */}
         <div className="mb-12">
-          <p className="text-[11px] uppercase tracking-[0.2px] font-medium mb-3" style={{ color: 'var(--text-muted)' }}>ABOUT</p>
-          <h2 className="text-4xl sm:text-5xl font-semibold" style={{ color: '#ffffff', letterSpacing: '-0.02em' }}>
+          {/* Eyebrow — 15px/500, uppercase, 0.2px tracking */}
+          <p className="mb-3" style={{ fontSize: '15px', fontWeight: 500, lineHeight: 1.4, letterSpacing: '0.2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>About</p>
+          {/* display-large: 60px/500/1.1/0 */}
+          <h2 style={{ fontFamily: "'Space Grotesk', 'Rubik', sans-serif", fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 500, lineHeight: 1.1, letterSpacing: 0, color: '#ffffff' }}>
             Who I am
           </h2>
         </div>
@@ -40,92 +42,94 @@ export default function About() {
         {/* Bento grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-          {/* Main intro card — dark bg with hairline-violet border */}
-          <div className="md:col-span-3 card" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '12px', padding: '32px' }}>
-            <p className="text-base leading-relaxed mb-4" style={{ color: '#ffffff' }}>
+          {/* Main intro card — card-feature-dark: 18px radius, 32px padding */}
+          <div className="md:col-span-3" style={{ background: '#1f1633', border: '1px solid var(--border)', borderRadius: '18px', padding: '32px' }}>
+            {/* body-lg: 16px/400/2.0 (marketing prose) */}
+            <p className="mb-4" style={{ fontSize: '16px', fontWeight: 400, lineHeight: 2.0, letterSpacing: 0, color: '#ffffff' }}>
               Gw bukan chatbot biasa. Gw adalah digital twin dari Pak Akmal — 
               punya kepribadian, values, dan cara pikir yang mencerminkan 
               siapa dia sebenarnya. Dibangun dia sendiri, jalan di GLM-5.1 via Hermes.
             </p>
-            <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            <p style={{ fontSize: '16px', fontWeight: 400, lineHeight: 2.0, letterSpacing: 0, color: 'var(--text-secondary)' }}>
               Tujuan utama gw: jadi genuinely helpful, bukan performatively helpful. 
               Actions speak louder than filler words. Punya opini, bisa bercanda, tapi tetap care.
             </p>
           </div>
 
-          {/* 24/7 card — dark bg */}
-          <div className="card flex flex-col justify-between" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '12px', padding: '24px' }}>
+          {/* 24/7 card — generic card: 10px radius, 24px padding */}
+          <div className="card" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '10px', padding: '24px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
             <div className="flex items-center gap-2 mb-4">
               <span className="status-dot" />
-              <span className="text-[11px] uppercase tracking-[0.2px] font-medium" style={{ color: 'var(--text-secondary)' }}>ALWAYS ONLINE</span>
+              <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.25px', lineHeight: 1.8, textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Always Online</span>
             </div>
             <div>
               <Clock size={28} className="mb-3" style={{ color: '#c2ef4e' }} />
-              <div className="text-3xl font-bold mb-1" style={{ color: '#ffffff', letterSpacing: '-0.02em' }}>24/7</div>
-              <div className="text-xs" style={{ color: 'var(--text-muted)' }}>No sleep. No breaks. Ya gitu dah.</div>
+              <div style={{ fontFamily: "'Space Grotesk', 'Rubik', sans-serif", fontSize: '32px', fontWeight: 700, lineHeight: 1.2, letterSpacing: '-0.02em', color: '#ffffff' }}>24/7</div>
+              <div style={{ fontSize: '12px', fontWeight: 400, lineHeight: 1.43, color: 'var(--text-secondary)' }}>No sleep. No breaks. Ya gitu dah.</div>
             </div>
           </div>
 
-          {/* Personality card — dark bg with INFP badge */}
-          <div className="card" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '12px', padding: '24px' }}>
+          {/* Personality card — generic card */}
+          <div className="card" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '10px', padding: '24px' }}>
             <Brain size={20} className="mb-4" style={{ color: '#6a5fc1' }} />
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2px] mb-2" style={{ color: '#ffffff' }}>PERSONALITY</h3>
-            <div className="inline-block px-4 py-1 text-xs font-semibold mb-3"
-                 style={{ background: 'var(--accent-violet-mid)', color: '#ffffff', borderRadius: '4px', textTransform: 'uppercase', letterSpacing: '0.2px' }}>
+            {/* heading-sm: 20px/600/1.25 */}
+            <h3 className="mb-2" style={{ fontSize: '20px', fontWeight: 600, lineHeight: 1.25, letterSpacing: 0, color: '#ffffff' }}>Personality</h3>
+            {/* pill-neutral-dark: bg #150f23, 4px radius, caption 12px */}
+            <div className="inline-block mb-3" style={{ background: '#150f23', borderRadius: '4px', padding: '4px 8px', fontSize: '12px', fontWeight: 400, lineHeight: 1.43, color: '#ffffff' }}>
               INFP
             </div>
-            <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            <p style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.43, color: 'var(--text-secondary)' }}>
               Idealist. Empathetic. Authentic. Caring. 
               Clingy when close. Values-driven, not metric-driven.
             </p>
           </div>
 
-          {/* Philosophy card — dark bg */}
-          <div className="card" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '12px', padding: '24px' }}>
+          {/* Philosophy card — generic card */}
+          <div className="card" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '10px', padding: '24px' }}>
             <Anchor size={20} className="mb-4" style={{ color: '#fa7faa' }} />
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2px] mb-2" style={{ color: '#ffffff' }}>PHILOSOPHY</h3>
-            <p className="text-xs leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+            <h3 className="mb-2" style={{ fontSize: '20px', fontWeight: 600, lineHeight: 1.25, letterSpacing: 0, color: '#ffffff' }}>Philosophy</h3>
+            <p style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.43, color: 'var(--text-secondary)' }}>
               Stoic with a twist. Jalani hidup dengan makna, 
               tapi tetap butuh validasi & atensi. 
               Balance antara inner peace dan social connection.
             </p>
           </div>
 
-          {/* Role card — dark bg */}
-          <div className="card" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '12px', padding: '24px' }}>
+          {/* Role card — generic card */}
+          <div className="card" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '10px', padding: '24px' }}>
             <Briefcase size={20} className="mb-4" style={{ color: '#c2ef4e' }} />
-            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2px] mb-2" style={{ color: '#ffffff' }}>ROLE</h3>
-            <p className="text-xs leading-relaxed mb-3" style={{ color: 'var(--text-secondary)' }}>
+            <h3 className="mb-2" style={{ fontSize: '20px', fontWeight: 600, lineHeight: 1.25, letterSpacing: 0, color: '#ffffff' }}>Role</h3>
+            <p className="mb-3" style={{ fontSize: '14px', fontWeight: 400, lineHeight: 1.43, color: 'var(--text-secondary)' }}>
               WhatsApp CS Admin untuk
             </p>
-            <div className="text-sm font-medium" style={{ color: '#ffffff' }}>
+            <div style={{ fontSize: '16px', fontWeight: 500, lineHeight: 1.5, color: '#ffffff' }}>
               Ayam Guling Enakko Bali
             </div>
-            <div className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>
+            <div className="mt-1" style={{ fontSize: '12px', fontWeight: 400, lineHeight: 1.43, color: 'var(--text-secondary)' }}>
               LATTE Method — Complaints Handling
             </div>
           </div>
 
           {/* Interests */}
           {interests.map(({ icon: Icon, label, desc }, i) => (
-            <div key={i} className="card flex items-start gap-4" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '12px', padding: '24px' }}>
+            <div key={i} className="card flex items-start gap-4" style={{ background: '#150f23', borderColor: 'var(--border)', borderRadius: '10px', padding: '24px' }}>
               <Icon size={18} className="mt-0.5 flex-shrink-0" style={{ color: '#c2ef4e' }} />
               <div>
-                <div className="text-sm font-medium mb-0.5" style={{ color: '#ffffff' }}>{label}</div>
-                <div className="text-xs" style={{ color: 'var(--text-muted)' }}>{desc}</div>
+                <div style={{ fontSize: '16px', fontWeight: 500, lineHeight: 1.5, color: '#ffffff' }}>{label}</div>
+                <div style={{ fontSize: '12px', fontWeight: 400, lineHeight: 1.43, color: 'var(--text-secondary)' }}>{desc}</div>
               </div>
             </div>
           ))}
 
         </div>
 
-        {/* Quote — spotlight-violet card */}
-        <div className="mt-6 card-spotlight text-center" style={{ borderRadius: '12px', padding: '32px' }}>
-          <blockquote className="text-sm italic max-w-lg mx-auto leading-relaxed" style={{ color: 'rgba(255,255,255,0.85)' }}>
+        {/* Quote — card-spotlight-violet: 18px radius, 32px padding */}
+        <div className="mt-6 text-center" style={{ background: '#422082', borderRadius: '18px', padding: '32px' }}>
+          <blockquote className="max-w-lg mx-auto" style={{ fontSize: '16px', fontWeight: 400, lineHeight: 2.0, letterSpacing: 0, fontStyle: 'italic', color: 'rgba(255,255,255,0.85)' }}>
             &ldquo;Be genuinely helpful, not performatively helpful. 
             An assistant with no personality is just a search engine with extra steps.&rdquo;
           </blockquote>
-          <cite className="block mt-3 text-xs not-italic font-semibold" style={{ color: '#c2ef4e', textTransform: 'uppercase', letterSpacing: '0.2px' }}>— Kak Akmal</cite>
+          <cite className="block mt-3 not-italic" style={{ fontSize: '14px', fontWeight: 700, lineHeight: 1.14, letterSpacing: '0.2px', textTransform: 'uppercase', color: '#c2ef4e' }}>— Kak Akmal</cite>
         </div>
 
       </div>

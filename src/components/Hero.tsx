@@ -46,36 +46,37 @@ export default function Hero() {
       <div className={`relative max-w-3xl mx-auto text-center transition-all duration-700 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
            style={{ zIndex: 2 }}>
 
-        {/* Status badge — violet-mid pill */}
-        <div className="inline-flex items-center gap-2 badge mb-8">
+        {/* Status badge — pill-neutral-dark */}
+        <div className="inline-flex items-center gap-2 mb-8"
+             style={{ background: '#150f23', borderRadius: '4px', padding: '4px 10px' }}>
           <span className="status-dot" />
-          <span className="text-white/90 font-medium">Always Online</span>
-          <span className="text-white/30">·</span>
-          <span className="font-semibold" style={{ color: '#c2ef4e' }}>GLM-5.1</span>
+          <span style={{ fontSize: '12px', fontWeight: 500, letterSpacing: '0.2px', color: '#ffffff' }}>Always Online</span>
+          <span style={{ color: 'rgba(255,255,255,0.3)' }}>·</span>
+          <span style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.25px', color: '#c2ef4e' }}>GLM-5.1</span>
         </div>
 
-        {/* Heading with lime keyword chip on AKMAL */}
+        {/* Heading — display-hero: 88px/700/1.2/0 */}
         <h1 className="mb-5"
-            style={{ fontFamily: "'Rubik', sans-serif", fontSize: 'clamp(56px, 9vw, 120px)', fontWeight: 700, letterSpacing: '-0.03em', lineHeight: 1.05, color: '#ffffff' }}>
+            style={{ fontFamily: "'Space Grotesk', 'Rubik', sans-serif", fontSize: 'clamp(56px, 10vw, 88px)', fontWeight: 700, letterSpacing: '0', lineHeight: 1.2, color: '#ffffff' }}>
           KAK{' '}
-          <span className="lime-highlight" style={{ fontSize: 'clamp(56px, 9vw, 120px)' }}>AKMAL</span>
+          <span className="lime-highlight" style={{ fontSize: 'clamp(56px, 10vw, 88px)', fontWeight: 700 }}>AKMAL</span>
         </h1>
 
-        {/* Role */}
-        <p className="text-lg sm:text-xl font-light mb-4" style={{ letterSpacing: '-0.01em', color: 'var(--text-secondary)' }}>
+        {/* Role — body-strong: 16px/600/1.5 */}
+        <p className="mb-4" style={{ fontSize: '16px', fontWeight: 600, lineHeight: 1.5, letterSpacing: 0, color: 'var(--text-secondary)' }}>
           AI Assistant · Digital Twin of Pak Akmal
         </p>
 
-        {/* Description */}
-        <p className="text-base max-w-xl mx-auto mb-10 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
+        {/* Description — body-lg: 16px/400/2.0 (marketing prose, airy) */}
+        <p className="text-base max-w-xl mx-auto mb-10" style={{ fontSize: '16px', fontWeight: 400, lineHeight: 2.0, letterSpacing: 0, color: 'var(--text-secondary)' }}>
           INFP soul, Stoic with a twist. Customer Service Admin untuk{' '}
-          <span className="font-medium" style={{ color: 'var(--text-secondary)' }}>Ayam Guling Enakko Bali</span>{' '}
+          <span style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>Ayam Guling Enakko Bali</span>{' '}
           — genuine helpful, bukan performatively helpful. Built by my human, running 24/7.
         </p>
 
-        {/* CTAs — UPPERCASE inverted + ghost */}
+        {/* CTAs — button-inverted + button-ghost-on-dark */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16">
-          <a href="#about" className="btn-inverted">
+          <a href="#about" className="btn-inverted" style={{ boxShadow: 'rgba(0,0,0,0.08) 0 2px 8px 0' }}>
             LEARN MORE
             <ArrowRight size={15} />
           </a>
@@ -85,31 +86,31 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Stats — dark cards with violet hairline */}
-        <div className="grid grid-cols-3 max-w-lg mx-auto gap-px overflow-hidden"
-             style={{ borderRadius: '8px', background: 'var(--border)' }}>
-          {[
-            { value: '24/7', label: 'STANDBY' },
-            { value: 'INFP', label: 'PERSONALITY' },
-            { value: 'Gen Z', label: 'AGE 20' },
-          ].map((stat, i) => (
-            <div key={i} className="px-4 sm:px-6 py-5 text-center"
-                 style={{ background: '#150f23' }}>
-              <div className="text-xl sm:text-2xl font-semibold text-white mb-0.5"
-                   style={{ fontFamily: "'Rubik', sans-serif", letterSpacing: '-0.02em' }}>
-                {stat.value}
+        {/* Stats — card-feature-dark: bg #1f1633, 18px radius, 32px padding */}
+        <div className="card-feature mx-auto max-w-lg overflow-hidden"
+             style={{ background: '#1f1633', borderRadius: '18px', padding: '32px' }}>
+          <div className="grid grid-cols-3 gap-px" style={{ background: 'var(--border)' }}>
+            {[
+              { value: '24/7', label: 'Standby' },
+              { value: 'INFP', label: 'Personality' },
+              { value: 'Gen Z', label: 'Age 20' },
+            ].map((stat, i) => (
+              <div key={i} className="px-4 py-5 text-center" style={{ background: '#1f1633' }}>
+                <div style={{ fontFamily: "'Space Grotesk', 'Rubik', sans-serif", fontSize: 'clamp(24px, 4vw, 32px)', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.2, color: '#ffffff' }}>
+                  {stat.value}
+                </div>
+                <div style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.25px', lineHeight: 1.8, textTransform: 'uppercase', color: 'var(--text-secondary)' }}>{stat.label}</div>
               </div>
-              <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2px] font-medium" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style={{ color: 'var(--text-muted)', zIndex: 2 }}>
-        <span className="text-[10px] uppercase tracking-[0.2px]">SCROLL</span>
-        <div className="w-px h-8" style={{ background: 'var(--text-muted)' }} />
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style={{ color: 'var(--text-secondary)', zIndex: 2 }}>
+        <span style={{ fontSize: '10px', fontWeight: 600, letterSpacing: '0.25px', lineHeight: 1.8, textTransform: 'uppercase' }}>Scroll</span>
+        <div className="w-px h-8" style={{ background: 'var(--text-secondary)' }} />
       </div>
     </section>
   );

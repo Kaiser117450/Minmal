@@ -70,16 +70,19 @@ export default function Capabilities() {
   const { ref, visible } = useVisible();
 
   return (
-    <section id="capabilities" ref={ref} className="py-24 px-6" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
+    <section id="capabilities" ref={ref} className="py-12 md:py-24 px-6" style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}>
       <div className={`max-w-5xl mx-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         
         {/* Header */}
         <div className="mb-12">
-          <p className="text-[11px] uppercase tracking-[0.2px] font-medium mb-3" style={{ color: 'var(--text-muted)' }}>CAPABILITIES</p>
-          <h2 className="text-4xl sm:text-5xl font-semibold mb-4" style={{ color: '#ffffff', letterSpacing: '-0.02em' }}>
+          {/* eyebrow: 15px/500, uppercase, 0.2px tracking */}
+          <p className="mb-3" style={{ fontSize: '15px', fontWeight: 500, lineHeight: 1.4, letterSpacing: '0.2px', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>Capabilities</p>
+          {/* display-large: 60px/500/1.1/0 */}
+          <h2 className="mb-4" style={{ fontFamily: "'Space Grotesk', 'Rubik', sans-serif", fontSize: 'clamp(36px, 6vw, 60px)', fontWeight: 500, lineHeight: 1.1, letterSpacing: 0, color: '#ffffff' }}>
             What I can do
           </h2>
-          <p className="text-base max-w-lg" style={{ color: 'var(--text-secondary)' }}>
+          {/* body-lg: 16px/400/2.0 */}
+          <p className="max-w-lg" style={{ fontSize: '16px', fontWeight: 400, lineHeight: 2.0, letterSpacing: 0, color: 'var(--text-secondary)' }}>
             Dari customer service hingga task automation — semua jalan 24/7 tanpa henti.
           </p>
         </div>
@@ -89,12 +92,13 @@ export default function Capabilities() {
           {capabilities.map(({ icon: Icon, title, desc, tags, variant, iconColor }, i) => {
             const isSpotlight = variant === 'spotlight';
             return (
-              <div key={i} className={isSpotlight ? 'card-spotlight' : 'card'} 
+              <div key={i} 
                    style={{ 
-                     background: isSpotlight ? 'var(--accent-violet-deep)' : '#150f23',
-                     borderColor: isSpotlight ? 'transparent' : 'var(--border)',
-                     borderRadius: '12px', 
-                     padding: '24px',
+                     background: isSpotlight ? '#422082' : '#1f1633',
+                     borderRadius: '18px',
+                     padding: '32px',
+                     color: '#ffffff',
+                     border: isSpotlight ? 'none' : '1px solid var(--border)',
                      display: 'flex',
                      flexDirection: 'column'
                    }}>
@@ -102,12 +106,14 @@ export default function Capabilities() {
                      style={{ background: isSpotlight ? 'rgba(255,255,255,0.12)' : 'rgba(255,255,255,0.06)', borderRadius: '8px', border: isSpotlight ? '1px solid rgba(255,255,255,0.15)' : '1px solid var(--border)' }}>
                   <Icon size={18} style={{ color: iconColor }} />
                 </div>
-                <h3 className="text-sm font-semibold mb-2" style={{ color: '#ffffff' }}>{title}</h3>
-                <p className="text-xs leading-relaxed mb-4 flex-1" style={{ color: 'var(--text-secondary)' }}>{desc}</p>
-                <div className="flex flex-wrap gap-1.5">
+                {/* heading-sm: 20px/600/1.25 */}
+                <h3 className="mb-2" style={{ fontSize: '20px', fontWeight: 600, lineHeight: 1.25, letterSpacing: 0, color: '#ffffff' }}>{title}</h3>
+                {/* body-md: 16px/500/1.5 */}
+                <p className="mb-4 flex-1" style={{ fontSize: '16px', fontWeight: 500, lineHeight: 1.5, letterSpacing: 0, color: 'var(--text-secondary)' }}>{desc}</p>
+                <div className="flex flex-wrap gap-2">
                   {tags.map((tag, j) => (
-                    <span key={j} className="px-3 py-1 text-xs font-medium"
-                          style={{ borderRadius: '4px', background: 'var(--accent-violet-mid)', color: '#ffffff', textTransform: 'uppercase', letterSpacing: '0.2px' }}>
+                    <span key={j} 
+                          style={{ borderRadius: '12px', background: '#79628c', color: '#ffffff', padding: '8px 16px', fontSize: '14px', fontWeight: 500, lineHeight: 1.29, letterSpacing: '0.2px', textTransform: 'uppercase' }}>
                       {tag}
                     </span>
                   ))}

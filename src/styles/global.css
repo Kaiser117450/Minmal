@@ -16,7 +16,7 @@
   --text-secondary: rgba(255, 255, 255, 0.72);
   --text-muted: rgba(255, 255, 255, 0.18);
 
-  /* Accent — Electric Lime */
+  /* Accent */
   --accent: #c2ef4e;
   --accent-pink: #fa7faa;
   --accent-violet: #6a5fc1;
@@ -29,8 +29,6 @@
 
   /* Focus */
   --focus: #9dc1f5;
-
-  --radius: 12px;
 }
 
 * {
@@ -48,7 +46,7 @@ body {
   font-family: 'Rubik', system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  line-height: 1.5;
   font-weight: 400;
   overflow-x: hidden;
 }
@@ -62,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 code, .mono {
-  font-family: 'Rubik', Monaco, Menlo, monospace;
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
 }
 
 /* Display text — lime-to-pink gradient */
@@ -76,10 +74,10 @@ code, .mono {
   background-clip: text;
 }
 
-/* Card — dark bg, hairline-violet border */
+/* Card — generic dark bg, hairline-violet border, 10px radius */
 .card {
   background: var(--bg);
-  border-radius: 12px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   padding: 24px;
   color: #ffffff;
@@ -90,20 +88,29 @@ code, .mono {
   border-color: rgba(255, 255, 255, 0.12);
 }
 
-/* Card spotlight — deep violet bg */
+/* Card feature-dark — 18px radius, 32px padding */
+.card-feature {
+  background: var(--ink-deep);
+  border-radius: 18px;
+  padding: 32px;
+  color: #ffffff;
+  border: 1px solid var(--border);
+}
+
+/* Card spotlight-violet — 18px radius, 32px padding */
 .card-spotlight {
   background: var(--accent-violet-deep);
-  border-radius: 12px;
-  padding: 24px;
+  border-radius: 18px;
+  padding: 32px;
   color: #ffffff;
 }
 
-/* Badge — violet-mid bg, 4px radius, uppercase */
+/* Badge — 4px radius, uppercase, 0.2px tracking */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 6px 14px;
+  padding: 4px 10px;
   border-radius: 4px;
   font-size: 12px;
   font-weight: 500;
@@ -113,19 +120,18 @@ code, .mono {
   color: #ffffff;
 }
 
-/* Primary button — surface bg, white text, UPPERCASE */
+/* Primary button — 8px radius, 14px/700 uppercase */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 44px;
-  padding: 0 24px;
+  padding: 12px 16px;
   border-radius: 8px;
   background: var(--surface);
   color: #ffffff;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: 'Rubik', system-ui, sans-serif;
   text-decoration: none;
   text-transform: uppercase;
@@ -133,25 +139,25 @@ code, .mono {
   border: none;
   cursor: pointer;
   transition: background 0.2s ease;
+  min-height: 44px;
 }
 
 .btn-primary:hover {
   background: #1a0f28;
 }
 
-/* Inverted button — white bg, ink-deep text, UPPERCASE */
+/* Inverted button — white bg, dark text, 8px radius, 14px/700 */
 .btn-inverted {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 44px;
-  padding: 0 24px;
+  padding: 12px 16px;
   border-radius: 8px;
   background: #ffffff;
   color: var(--ink-deep);
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   font-family: 'Rubik', system-ui, sans-serif;
   text-decoration: none;
   text-transform: uppercase;
@@ -159,30 +165,33 @@ code, .mono {
   border: none;
   cursor: pointer;
   transition: opacity 0.2s ease;
+  min-height: 44px;
 }
 
 .btn-inverted:hover {
   opacity: 0.9;
 }
 
-/* Ghost button — translucent, white text */
+/* Ghost button on dark — translucent, 12px radius, 14px/700 */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  height: 44px;
-  padding: 0 24px;
+  padding: 8px 16px;
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.18);
   color: #ffffff;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 700;
   font-family: 'Rubik', system-ui, sans-serif;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
   border: none;
   cursor: pointer;
   transition: background 0.2s ease;
+  min-height: 44px;
 }
 
 .btn-ghost:hover {
@@ -232,13 +241,13 @@ code, .mono {
   flex-shrink: 0;
 }
 
-/* Lime highlight — inline keyword chip */
+/* Lime highlight — inline keyword chip, 4px radius, 0 vertical pad */
 .lime-highlight {
   display: inline;
   background: #c2ef4e;
   color: #1f1633;
   border-radius: 4px;
-  padding: 2px 8px;
+  padding: 0 12px;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
