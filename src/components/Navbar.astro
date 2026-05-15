@@ -1,15 +1,15 @@
 ---
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm" style="border-bottom: 1px solid var(--border);">
+<header class="fixed top-0 left-0 right-0 z-50" style="background: rgba(31,22,51,0.92); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--border);">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="flex items-center gap-2.5 group">
       <div class="w-7 h-7 flex items-center justify-center text-white text-xs font-semibold"
-           style="background: #5645d4; border-radius: 6px;">
-        MI
+           style="background: #150f23; border-radius: 6px; border: 1px solid var(--border);">
+        M<span style="color: #c2ef4e;">I</span>
       </div>
-      <span class="text-sm font-medium text-[var(--text-secondary)] group-hover:text-[var(--text)] transition-colors">
+      <span class="text-sm font-medium group-hover:text-white transition-colors" style="color: var(--text-secondary);">
         Minal
       </span>
     </a>
@@ -25,7 +25,7 @@
     <!-- Status -->
     <div class="flex items-center gap-2">
       <span class="status-dot"></span>
-      <span class="text-[11px] tracking-wide text-[var(--text-muted)] font-medium hidden sm:inline">Online</span>
+      <span class="text-[11px] tracking-[0.2px] font-medium hidden sm:inline" style="color: var(--text-secondary);">Online</span>
     </div>
   </div>
 </header>
@@ -36,7 +36,7 @@
     border-radius: 6px;
     font-size: 13px;
     font-weight: 500;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Rubik', system-ui, sans-serif;
     letter-spacing: 0;
     color: var(--text-secondary);
     text-decoration: none;
@@ -44,7 +44,7 @@
   }
 
   .nav-link:hover {
-    color: var(--accent);
-    background: var(--accent-dim);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
   }
 </style>

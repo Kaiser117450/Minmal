@@ -22,22 +22,21 @@ export default function Contact() {
     <section id="contact" ref={ref} className="py-24 px-6" style={{ borderTop: '1px solid var(--border)' }}>
       <div className={`max-w-5xl mx-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
 
-        {/* Main CTA block — dark navy band */}
-        <div className="relative overflow-hidden"
-             style={{ background: 'linear-gradient(135deg, #0a1530 0%, #1a2a52 50%, #0a1530 100%)', borderRadius: '12px', padding: '64px 40px' }}>
+        {/* Main CTA block — dark bg */}
+        <div className="relative overflow-hidden starfield"
+             style={{ background: '#150f23', borderRadius: '12px', padding: '64px 40px' }}>
           
-          <div className="relative">
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full"
-                 style={{ background: 'rgba(86,69,212,0.15)', border: '1px solid rgba(86,69,212,0.3)' }}>
+          <div className="relative" style={{ zIndex: 1 }}>
+            <div className="inline-flex items-center gap-2 badge mb-6">
               <span className="status-dot" />
-              <span className="text-white/70 text-xs font-medium">Available now</span>
+              <span className="text-xs font-medium" style={{ color: 'var(--text-secondary)' }}>AVAILABLE NOW</span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl font-semibold text-white mb-4"
                 style={{ letterSpacing: '-0.02em' }}>
               Get in touch
             </h2>
-            <p className="text-white/40 text-base max-w-md mx-auto mb-8 leading-relaxed">
+            <p className="text-base max-w-md mx-auto mb-8 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
               Punya pertanyaan atau butuh bantuan? 
               Gw standby 24/7 — langsung reach out via WhatsApp atau cek repositori di GitHub.
             </p>
@@ -47,39 +46,39 @@ export default function Contact() {
                 href="https://wa.me/6281931196948"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 h-11 px-6 text-sm font-medium no-underline transition-opacity hover:opacity-90"
-                style={{ background: '#5645d4', color: '#ffffff', borderRadius: '30px' }}
+                className="btn-inverted"
               >
                 <MessageSquare size={15} />
-                WhatsApp
+                WHATSAPP
                 <ArrowUpRight size={13} className="opacity-70" />
               </a>
               <a
                 href="https://github.com/Kaiser117450/Minmal"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 h-11 px-6 text-sm font-medium no-underline transition-colors"
-                style={{ background: 'transparent', color: 'rgba(255,255,255,0.8)', borderRadius: '30px', border: '1px solid rgba(255,255,255,0.25)' }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; }}
+                className="btn-ghost"
               >
                 <Github size={15} />
-                GitHub
+                GITHUB
               </a>
             </div>
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs" style={{ borderTop: '1px solid var(--border)', color: 'var(--text-muted)' }}>
+        {/* Lime squiggly divider */}
+        <div className="squiggly-divider mt-12" />
+
+        {/* Footer — light bg */}
+        <div className="mt-0 pt-8 pb-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs"
+             style={{ background: 'var(--surface-light)', color: 'var(--ink-light)', borderTop: '1px solid var(--border-light)', marginLeft: '-40px', marginRight: '-40px', paddingLeft: '40px', paddingRight: '40px' }}>
           <div>
-            Built by <span style={{ color: 'var(--text-secondary)' }}>Pak Akmal</span>
+            Built by <span className="font-medium" style={{ color: 'var(--ink-light)' }}>Pak Akmal</span>
             {' '}&mdash;{' '}
-            <span style={{ color: 'var(--text-secondary)' }}>Kaiser117450</span>
+            <span className="font-medium" style={{ color: 'var(--ink-light)' }}>Kaiser117450</span>
           </div>
           <div className="flex items-center gap-1.5">
-            <Zap size={11} style={{ color: 'var(--text-secondary)' }} />
-            <span>Powered by <span style={{ color: 'var(--text-secondary)' }}>Hermes</span> + <span style={{ color: 'var(--text-secondary)' }}>GLM-5.1</span></span>
+            <Zap size={11} style={{ color: '#c2ef4e' }} />
+            <span>Powered by <span className="font-medium" style={{ color: 'var(--ink-light)' }}>Hermes</span> + <span className="font-medium" style={{ color: 'var(--ink-light)' }}>GLM-5.1</span></span>
           </div>
         </div>
 
