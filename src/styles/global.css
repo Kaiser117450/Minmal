@@ -1,20 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #080808;
-  --surface: #0f0f0f;
-  --surface-2: #141414;
-  --border: rgba(255, 255, 255, 0.07);
-  --border-strong: rgba(255, 255, 255, 0.12);
-  --text: #f4f4f5;
-  --text-secondary: #a1a1aa;
-  --text-muted: #52525b;
-  --accent: #7c3aed;
-  --accent-hover: #6d28d9;
-  --accent-light: #a78bfa;
-  --accent-dim: rgba(124, 58, 237, 0.12);
-  --green: #22c55e;
-  --radius: 12px;
+  --bg: #ffffff;
+  --surface: #f5f5f5;
+  --surface-2: #ebebeb;
+  --border: #cacacb;
+  --border-strong: #9e9ea0;
+  --text: #111111;
+  --text-secondary: #707072;
+  --text-muted: #9e9ea0;
+  --accent: #111111;
+  --green: #007d48;
+  --radius: 0px;
 }
 
 * {
@@ -37,121 +34,103 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  font-family: 'Bebas Neue', 'Inter', system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
 }
 
 code, .mono {
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
-/* Gradient text */
+/* Display text — bold uppercase Bebas Neue black */
 .gradient-text {
-  background: linear-gradient(135deg, var(--accent-light) 0%, #c084fc 50%, #e879f9 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: 'Bebas Neue', 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #111111;
 }
 
-/* Card */
+/* Card — flat, no radius, no shadow, no border */
 .card {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  transition: border-color 0.2s ease;
+  border-radius: 0px;
+  border: none;
 }
 
-.card:hover {
-  border-color: var(--border-strong);
-}
-
-/* Badge */
+/* Badge — pill shape */
 .badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  padding: 4px 12px;
-  border-radius: 99px;
+  padding: 6px 14px;
+  border-radius: 30px;
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text-secondary);
+  background: #ffffff;
+  border: 1px solid #cacacb;
+  color: #707072;
 }
 
-/* Button */
+/* Primary button — black pill */
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 11px 22px;
-  border-radius: 8px;
-  background: var(--accent);
-  color: #fff;
+  height: 48px;
+  padding: 16px 32px;
+  border-radius: 30px;
+  background: #111111;
+  color: #ffffff;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid transparent;
+  border: none;
+  transition: opacity 0.2s ease;
 }
 
 .btn-primary:hover {
-  background: var(--accent-hover);
-  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.15);
+  opacity: 0.85;
 }
 
+/* Secondary button — gray pill */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 11px 22px;
-  border-radius: 8px;
-  background: transparent;
-  color: var(--text);
+  height: 48px;
+  padding: 16px 32px;
+  border-radius: 30px;
+  background: #f5f5f5;
+  color: #111111;
   font-size: 14px;
   font-weight: 500;
   text-decoration: none;
-  transition: background 0.2s ease, border-color 0.2s ease;
-  border: 1px solid var(--border-strong);
+  border: 1px solid #cacacb;
+  transition: background 0.2s ease;
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: #ebebeb;
 }
 
-/* Grid dot pattern */
-.dot-grid {
-  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
-  background-size: 28px 28px;
-}
-
-/* Glow orb */
-.hero-glow {
-  position: absolute;
-  top: -20%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 800px;
-  height: 600px;
-  background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.13) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-/* Section divider */
+/* Divider */
 .divider {
   width: 100%;
   height: 1px;
-  background: var(--border);
+  background: #e5e5e5;
 }
 
 /* Fade in animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -160,7 +139,7 @@ code, .mono {
 }
 
 .animate-fade-up {
-  animation: fadeInUp 0.6s ease forwards;
+  animation: fadeInUp 0.5s ease forwards;
 }
 
 .delay-100 { animation-delay: 0.1s; opacity: 0; }
@@ -168,35 +147,41 @@ code, .mono {
 .delay-300 { animation-delay: 0.3s; opacity: 0; }
 .delay-400 { animation-delay: 0.4s; opacity: 0; }
 
-/* Status dot */
+/* Status dot — Nike success green */
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
 
 .status-dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: var(--green);
+  background: #007d48;
   animation: pulse 2s ease-in-out infinite;
   flex-shrink: 0;
 }
 
-/* Scrollbar */
+/* Scrollbar — light theme */
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg);
+  background: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #cacacb;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #9e9ea0;
+}
+
+/* Selection color */
+::selection {
+  background: #111111;
+  color: #ffffff;
 }
