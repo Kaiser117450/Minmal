@@ -86,19 +86,20 @@ export default function Hero() {
         </div>
 
         {/* Stats — dark cards with violet hairline */}
-        <div className="inline-grid grid-cols-3">
+        <div className="grid grid-cols-3 max-w-lg mx-auto gap-px overflow-hidden"
+             style={{ borderRadius: '8px', background: 'var(--border)' }}>
           {[
             { value: '24/7', label: 'STANDBY' },
             { value: 'INFP', label: 'PERSONALITY' },
             { value: 'Gen Z', label: 'AGE 20' },
           ].map((stat, i) => (
-            <div key={i} className="px-8 py-5 text-center"
-                 style={{ background: '#150f23', borderBottom: '1px solid var(--border)', borderRight: i < 2 ? '1px solid var(--border)' : 'none' }}>
-              <div className="text-2xl font-semibold text-white mb-0.5"
+            <div key={i} className="px-4 sm:px-6 py-5 text-center"
+                 style={{ background: '#150f23' }}>
+              <div className="text-xl sm:text-2xl font-semibold text-white mb-0.5"
                    style={{ fontFamily: "'Rubik', sans-serif", letterSpacing: '-0.02em' }}>
                 {stat.value}
               </div>
-              <div className="text-[11px] uppercase tracking-[0.2px] font-medium" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
+              <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.2px] font-medium" style={{ color: 'var(--text-muted)' }}>{stat.label}</div>
             </div>
           ))}
         </div>
