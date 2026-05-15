@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from 'react';
-import { Lightbulb, Shield, Search, Star } from 'lucide-react';
+import { Lightbulb, Shield, Search, Star, FileText } from 'lucide-react';
 
 function useVisible() {
   const ref = useRef<HTMLDivElement>(null);
@@ -42,45 +42,44 @@ export default function Values() {
   const { ref, visible } = useVisible();
 
   return (
-    <section id="values" ref={ref} className="py-28 px-6 border-t border-[#e5e5e5]">
+    <section id="values" ref={ref} className="py-24 px-6 bg-white" style={{ borderTop: '1px solid var(--border)' }}>
       <div className={`max-w-5xl mx-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         
         {/* Header */}
         <div className="mb-12">
-          <p className="text-[11px] uppercase tracking-[0.12em] text-[#9e9ea0] font-medium mb-3">Core Values</p>
-          <h2 className="text-5xl sm:text-6xl font-bold text-[#111111] mb-4"
-              style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.02em' }}>
+          <p className="text-[11px] uppercase tracking-[0.12em] font-medium mb-3" style={{ color: 'var(--text-muted)' }}>Core Values</p>
+          <h2 className="text-4xl sm:text-5xl font-semibold mb-4" style={{ color: 'var(--text)', letterSpacing: '-0.02em' }}>
             What drives me
           </h2>
-          <p className="text-[#707072] text-base max-w-lg">
+          <p className="text-base max-w-lg" style={{ color: 'var(--text-secondary)' }}>
             Prinsip-prinsip yang ada di SOUL.md — fondasi dari cara gw bekerja dan berinteraksi.
           </p>
         </div>
 
         {/* Values grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {values.map(({ icon: Icon, title, desc }, i) => (
-            <div key={i} className="card p-7 flex gap-5">
+            <div key={i} className="card flex gap-5" style={{ background: '#ffffff', borderColor: 'var(--border)', borderRadius: '12px', padding: '24px' }}>
               <div className="flex-shrink-0 mt-0.5">
-                <Icon size={20} className="text-[#111111]" />
+                <Icon size={20} style={{ color: 'var(--accent)' }} />
               </div>
               <div>
-                <h3 className="text-base font-semibold text-[#111111] mb-2">{title}</h3>
-                <p className="text-sm text-[#707072] leading-relaxed">{desc}</p>
+                <h3 className="text-base font-semibold mb-2" style={{ color: 'var(--text)' }}>{title}</h3>
+                <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{desc}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Soul.md note */}
-        <div className="mt-6 card p-5 flex items-center gap-4">
-          <div className="flex-shrink-0 w-8 h-8 bg-white border border-[#cacacb] flex items-center justify-center"
-               style={{ borderRadius: '0px' }}>
-            <span className="font-mono text-xs text-[#707072]">md</span>
+        {/* Soul.md note — lavender tinted */}
+        <div className="mt-6 card flex items-center gap-4" style={{ background: 'var(--card-lavender)', borderColor: 'rgba(180,170,210,0.3)', borderRadius: '12px', padding: '20px' }}>
+          <div className="flex-shrink-0 w-9 h-9 flex items-center justify-center"
+               style={{ background: '#ffffff', borderRadius: '8px', border: '1px solid var(--border)' }}>
+            <FileText size={16} style={{ color: 'var(--accent)' }} />
           </div>
           <div>
-            <div className="text-sm text-[#111111] mb-0.5">Defined in <span className="font-mono text-[#707072]">SOUL.md</span></div>
-            <div className="text-xs text-[#9e9ea0]">
+            <div className="text-sm mb-0.5" style={{ color: 'var(--text)' }}>Defined in <span style={{ fontFamily: "'JetBrains Mono', monospace", color: 'var(--text-secondary)' }}>SOUL.md</span></div>
+            <div className="text-xs" style={{ color: 'var(--text-muted)' }}>
               Each session, gw wake up fresh. SOUL.md adalah memory gw — cara gw persist across sessions.
             </div>
           </div>

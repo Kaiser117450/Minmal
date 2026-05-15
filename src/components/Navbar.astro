@@ -1,15 +1,15 @@
 ---
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-[#e5e5e5]">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm" style="border-bottom: 1px solid var(--border);">
   <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
     <a href="/" class="flex items-center gap-2.5 group">
-      <div class="w-7 h-7 bg-[#111111] flex items-center justify-center text-white text-xs font-bold font-mono tracking-tight"
-           style="border-radius: 0px;">
+      <div class="w-7 h-7 flex items-center justify-center text-white text-xs font-semibold"
+           style="background: #5645d4; border-radius: 6px;">
         MI
       </div>
-      <span class="text-sm font-medium text-[#707072] group-hover:text-[#111111] transition-colors">
+      <span class="text-sm font-medium text-[var(--text-secondary)] group-hover:text-[var(--text)] transition-colors">
         Minal
       </span>
     </a>
@@ -25,7 +25,7 @@
     <!-- Status -->
     <div class="flex items-center gap-2">
       <span class="status-dot"></span>
-      <span class="text-[11px] tracking-wide uppercase text-[#9e9ea0] font-medium hidden sm:inline">Online</span>
+      <span class="text-[11px] tracking-wide text-[var(--text-muted)] font-medium hidden sm:inline">Online</span>
     </div>
   </div>
 </header>
@@ -33,17 +33,18 @@
 <style>
   .nav-link {
     padding: 6px 12px;
-    border-radius: 0px;
-    font-size: 12px;
+    border-radius: 6px;
+    font-size: 13px;
     font-weight: 500;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: #707072;
+    font-family: 'Inter', system-ui, sans-serif;
+    letter-spacing: 0;
+    color: var(--text-secondary);
     text-decoration: none;
-    transition: color 0.15s ease;
+    transition: color 0.15s ease, background 0.15s ease;
   }
 
   .nav-link:hover {
-    color: #111111;
+    color: var(--accent);
+    background: var(--accent-dim);
   }
 </style>
